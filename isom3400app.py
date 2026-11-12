@@ -17,7 +17,6 @@ df['sales'] = np.random.randint(100, 500, size=(len(date_rng)))
 # Data visualization with Streamlit
 st.subheader("Monthly Sales Data")
 st.line_chart(df.set_index('date'))
-st.line_chart(df.set_index('date'))
 
 # Adding a slider for user input
 sales_threshold = st.slider("Sales threshold", 100, 500, 300)
