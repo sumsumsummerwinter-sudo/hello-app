@@ -1,3 +1,4 @@
+import math
 import streamlit as st
 
 # Title
@@ -8,7 +9,7 @@ num1 = st.number_input("Enter first number", value=0.0)
 num2 = st.number_input("Enter second number", value=0.0)
 
 # Operation selection
-operation = st.selectbox("Choose operation", ["Add", "Subtract", "Multiply", "Divide","Sin()"])
+operation = st.selectbox("Choose operation", ["Add", "Subtract", "Multiply", "Divide", "Sin()"])
 
 # Calculate
 if st.button("Calculate"):
@@ -21,8 +22,9 @@ if st.button("Calculate"):
     elif operation == "Divide":
         result = num1 / num2 if num2 != 0 else "Error: Division by zero"
     elif operation == "Sin()":
-        pass
+        # 注意：math.sin() 預設輸入值為弧度 (radians)
+        result = math.sin(num1)
     else:
-        result="Invalid operation!"
+        result = "Invalid operation!"
 
     st.success(f"Result: {result}")
